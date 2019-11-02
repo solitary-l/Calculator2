@@ -19,38 +19,32 @@
         android:maxLines="1"/>
 
     <Button
-        android:id="@+id/back_button"
-        android:layout_columnSpan="2"
+        android:id="@+id/mmtocm_button"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:text="回退" />
+        android:text="mm→cm" />
 
-    <Button
-        android:id="@+id/clear_button"
-        android:layout_columnSpan="2"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="清空" />
 
     <Button
         android:id="@+id/btd_button"
-        android:layout_columnSpan="2"
+        android:layout_columnSpan="1"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:text="二进制转十进制" />
+
     <Button
         android:id="@+id/dtb_button"
-        android:layout_columnSpan="2"
+        android:layout_columnSpan="1"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:text="十进制转二进制" />
+
     <Button
         android:id="@+id/dto_button"
-        android:layout_columnSpan="2"
+        android:layout_columnSpan="1"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -58,55 +52,11 @@
 
     <Button
         android:id="@+id/otd_button"
-        android:layout_columnSpan="2"
+        android:layout_columnSpan="1"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:text="八进制转十进制" />
-
-    <Button
-        android:id="@+id/dth_button"
-        android:layout_columnSpan="2"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="十进制转十六进制" />
-
-    <Button
-        android:id="@+id/htd_button"
-        android:layout_columnSpan="2"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="十六进制转十进制" />
-
-    <Button
-        android:id="@+id/mmtocm_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="mm→cm" />
-
-    <Button
-        android:id="@+id/one_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="1" />
-
-    <Button
-        android:id="@+id/two_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="2" />
-
-    <Button
-        android:id="@+id/three_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="3" />
 
     <Button
         android:id="@+id/cmtom_button"
@@ -116,26 +66,52 @@
         android:text="cm→m" />
 
     <Button
+        android:id="@+id/back_button"
+        android:layout_columnSpan="1"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="回退" />
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_columnSpan="1"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="清空" />
+
+
+    <Button
+        android:id="@+id/dth_button"
+        android:layout_columnSpan="1"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="十进制转十六进制" />
+
+    <Button
+        android:id="@+id/htd_button"
+        android:layout_columnSpan="1"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="十六进制转十进制" />
+
+
+    <Button
+        android:id="@+id/one_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="1" />
+
+    <Button
         android:id="@+id/four_button"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:text="4" />
-
-    <Button
-        android:id="@+id/five_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="5" />
-
-    <Button
-        android:id="@+id/six_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="6" />
-
 
     <Button
         android:id="@+id/seven_button"
@@ -145,11 +121,55 @@
         android:text="7" />
 
     <Button
+        android:id="@+id/point_button"
+        android:layout_rowSpan="2"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="." />
+
+    <Button
+        android:id="@+id/two_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="2" />
+
+    <Button
+        android:id="@+id/five_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="5" />
+
+    <Button
         android:id="@+id/eight_button"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:text="8" />
+
+    <Button
+        android:id="@+id/zero_button"
+        android:layout_rowSpan="2"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/three_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/six_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="6" />
 
     <Button
         android:id="@+id/nine_button"
@@ -159,27 +179,12 @@
         android:text="9" />
 
     <Button
-        android:id="@+id/mtoinch_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="m→inch" />
-
-
-    <Button
-        android:id="@+id/zero_button"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="0" />
-
-    <Button
         android:id="@+id/equal_button"
+        android:layout_rowSpan="2"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:background="@color/orange"
         android:text="=" />
-
 
 </GridLayout>

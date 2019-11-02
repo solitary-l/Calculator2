@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_FULL_SENSOR);
 
-        try{
+        try {
             Button left_button = (Button) findViewById(R.id.left_button);
             left_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button right_button = (Button) findViewById(R.id.right_button);
             right_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button plus_button = (Button) findViewById(R.id.plus_button);
             plus_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button one_button = (Button) findViewById(R.id.one_button);
             one_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button two_button = (Button) findViewById(R.id.two_button);
             two_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button three_button = (Button) findViewById(R.id.three_button);
             three_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button minus_button = (Button) findViewById(R.id.minus_button);
             minus_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button four_button = (Button) findViewById(R.id.four_button);
             four_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button five_button = (Button) findViewById(R.id.five_button);
             five_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button six_button = (Button) findViewById(R.id.six_button);
             six_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button multiplication_button = (Button) findViewById(R.id.multiplication_button);
             multiplication_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button seven_button = (Button) findViewById(R.id.seven_button);
             seven_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button eight_button = (Button) findViewById(R.id.eight_button);
             eight_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -245,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button nine_button = (Button) findViewById(R.id.nine_button);
             nine_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -262,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button division_button = (Button) findViewById(R.id.division_button);
             division_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button point_button = (Button) findViewById(R.id.point_button);
             point_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -296,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button zero_button = (Button) findViewById(R.id.zero_button);
             zero_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -313,7 +313,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button clear_button = (Button) findViewById(R.id.clear_button);
             clear_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -326,7 +326,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button equal_button = (Button) findViewById(R.id.equal_button);
             equal_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -349,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button sin_button = (Button) findViewById(R.id.sin_button);
             sin_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -364,7 +364,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button cos_button = (Button) findViewById(R.id.cos_button);
             cos_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -379,7 +379,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button back_button = (Button) findViewById(R.id.back_button);
             back_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -399,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        try{
+        try {
             Button help_button = (Button) findViewById(R.id.help_button);
             help_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -411,7 +411,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button btd_button = (Button) findViewById(R.id.btd_button);//二进制转十进制
             btd_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -431,7 +431,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button dtb_button = (Button) findViewById(R.id.dtb_button);//十进制转二进制
             dtb_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -451,7 +451,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button dto_button = (Button) findViewById(R.id.dto_button);//十进制转八进制
             dto_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -471,7 +471,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button otd_button = (Button) findViewById(R.id.otd_button);//八进制转十进制
             otd_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -491,7 +491,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button dth_button = (Button) findViewById(R.id.dth_button);//十进制转十六进制
             dth_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -511,7 +511,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button htd_button = (Button) findViewById(R.id.htd_button);//十六进制转十进制
             htd_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -533,7 +533,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        try{
+        try {
             Button mmtocm_button = (Button) findViewById(R.id.mmtocm_button);
             mmtocm_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -553,7 +553,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Button cmtom_button = (Button) findViewById(R.id.cmtom_button);
             cmtom_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -574,33 +574,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
-        try{
-            Button mtoinch_button = (Button) findViewById(R.id.mtoinch_button);
-            mtoinch_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TextView txt = (TextView) findViewById(R.id.txt);
-                    try {
-                        double new_data = Double.valueOf(txt.getText().toString()) * 3.281;
-                        String s = "" + new_data;
-                        txt.setText(s);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        txt.setText("ERROR");
-                    }
-
-
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 }
-
-
-
-
-
