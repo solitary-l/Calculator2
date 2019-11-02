@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="cmtom_button" type="id" />
+    <item name="mmtocm_button" type="id" />
+    <item name="htd_button" type="id" />
+    <item name="dth_button" type="id" />
+    <item name="otd_button" type="id" />
+    <item name="dto_button" type="id" />
+    <item name="mtoinch_button" type="id" />
+    <item name="btd_button" type="id" />
+    <item name="dtb_button" type="id" />
+</resources>

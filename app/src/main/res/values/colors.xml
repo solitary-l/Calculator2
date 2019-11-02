@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="colorPrimary">#008577</color>
+
+    <color name="colorPrimaryDark">#00574B</color>
+
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="ivory">#FFFFF0</color>
+
+    <color name="lightyellow">#FFFFE0</color>
+
+    <color name="yellow">#FFFF00</color>
+
+    <color name="snow">#FFFAFA</color>
+
+    <color name="floralwhite">#FFFAF0</color>
+
+    <color name="lemonchiffon">#FFFACD</color>
+
+    <color name="cornsilk">#FFF8DC</color>
+
+    <color name="seashell">#FFF5EE</color>
+
+    <color name="lavenderblush">#FFF0F5</color>
+
+    <color name="papayawhip">#FFEFD5</color>
+
+    <color name="blanchedalmond">#FFEBCD</color>
+
+    <color name="mistyrose">#FFE4E1</color>
+
+    <color name="bisque">#FFE4C4</color>
+
+    <color name="moccasin">#FFE4B5</color>
+
+    <color name="navajowhite">#FFDEAD</color>
+
+    <color name="peachpuff">#FFDAB9</color>
+
+    <color name="gold">#FFD700</color>
+
+    <color name="pink">#FFC0CB</color>
+
+    <color name="lightpink">#FFB6C1</color>
+
+    <color name="orange">#FFA500</color>
+
+    <color name="lightsalmon">#FFA07A</color>
+
+    <color name="darkorange">#FF8C00</color>
+
+    <color name="black">#000000</color>
+
+</resources>
+

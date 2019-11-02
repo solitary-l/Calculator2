@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GridLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="4"
+    android:rowCount="8"
+    android:orientation="horizontal"
+    android:background="@color/snow">
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_rowSpan="2"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill"
+        android:textColor="@color/black"
+        android:text="0"
+        android:gravity="right"
+        android:textSize="50sp"
+        android:maxLines="1"/>
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="清空" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="back" />
+
+
+    <Button
+        android:id="@+id/plus_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/minus_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="－" />
+
+    <Button
+        android:id="@+id/multiplication_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="×" />
+
+    <Button
+        android:id="@+id/sin_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="Sin" />
+
+    <Button
+        android:id="@+id/one_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="1" />
+
+    <Button
+        android:id="@+id/two_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="2" />
+
+    <Button
+        android:id="@+id/three_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="3" />
+
+    <Button
+        android:id="@+id/cos_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="Cos" />
+
+
+    <Button
+        android:id="@+id/four_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="4" />
+
+    <Button
+        android:id="@+id/five_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="5" />
+
+    <Button
+        android:id="@+id/six_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="6" />
+
+    <Button
+        android:id="@+id/left_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="(" />
+
+    <Button
+        android:id="@+id/seven_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="7" />
+
+    <Button
+        android:id="@+id/eight_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="8" />
+
+    <Button
+        android:id="@+id/nine_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="9" />
+
+
+    <Button
+        android:id="@+id/right_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text=")" />
+
+
+    <Button
+        android:id="@+id/division_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="/" />
+
+
+
+
+    <Button
+        android:id="@+id/zero_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/point_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="." />
+
+    <Button
+        android:id="@+id/equal_button"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:background="@color/orange"
+        android:text="=" />
+
+    <Button
+        android:id="@+id/more_button"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="更多运算" />
+
+    <Button
+        android:id="@+id/help_button"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="帮助"
+        android:textSize="20sp" />
+
+</GridLayout>
