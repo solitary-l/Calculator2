@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -68,6 +69,23 @@ public class MainActivity extends AppCompatActivity {
                         txt.setText("+");
                     } else {
                         txt.setText(txt.getText().toString() + "+");
+                    }
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            Button zero_button = (Button) findViewById(R.id.zero_button);
+            zero_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    TextView txt = (TextView) findViewById(R.id.txt);
+                    if (txt.getText().toString().equals("0")) {
+                        txt.setText("0");
+                    } else {
+                        txt.setText(txt.getText().toString() + "0");
                     }
                 }
             });
@@ -296,22 +314,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        try {
-            Button zero_button = (Button) findViewById(R.id.zero_button);
-            zero_button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    TextView txt = (TextView) findViewById(R.id.txt);
-                    if (txt.getText().toString().equals("0")) {
-                        txt.setText("0");
-                    } else {
-                        txt.setText(txt.getText().toString() + "0");
-                    }
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+
 
         try {
             Button clear_button = (Button) findViewById(R.id.clear_button);
@@ -332,14 +335,14 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     TextView txt = (TextView) findViewById(R.id.txt);
-                    try {
+                    try
+                    {
                         String middle = txt.getText().toString();
-                        char[] mid = middle.toCharArray();
-                        mid = main.cutString(mid);
-                        List list = main.transferToBehind(mid);
-                        BigDecimal comeOut = main.calculator(list);
-                        txt.setText(comeOut.toString());
-                    } catch (Exception e) {
+                        middle= main.Calculator.Recount(middle);
+                        List list = Collections.singletonList(main.Calculator.AddStacks(middle));
+                        txt.setText(list.toString());
+                    }
+                    catch (Exception e) {
                         e.printStackTrace();
                         txt.setText("ERROR");
                     }
@@ -404,7 +407,7 @@ public class MainActivity extends AppCompatActivity {
             help_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(MainActivity.this, "帮助：\n" + "可以完成简单的加减乘除运算\n" + "更多功能请点击更多运算\n", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "帮助：\n" + "可以完成简单的加减乘除运算\n" + "更多功能切为横屏\n", Toast.LENGTH_LONG).show();
                 }
             });
         } catch (Exception e) {
@@ -534,7 +537,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
-            Button mmtocm_button = (Button) findViewById(R.id.mmtocm_button);
+            Button mmtocm_button = (Button) findViewById(R.id.mmcm_button);
             mmtocm_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -554,13 +557,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
-            Button cmtom_button = (Button) findViewById(R.id.cmtom_button);
+            Button cmtom_button = (Button) findViewById(R.id.cmm_button);
             cmtom_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     TextView txt = (TextView) findViewById(R.id.txt);
                     try {
-                        double new_data = Double.valueOf(txt.getText().toString()) / 10;
+                        double new_data = Double.valueOf(txt.getText().toString()) / 100;
                         String s = "" + new_data;
                         txt.setText(s);
                     } catch (Exception e) {

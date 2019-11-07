@@ -25,7 +25,7 @@
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:text="清空" />
+        android:text="C" />
 
     <Button
         android:id="@+id/back_button"
@@ -183,16 +183,10 @@
         android:background="@color/orange"
         android:text="=" />
 
-    <Button
-        android:id="@+id/more_button"
-        android:layout_columnSpan="3"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="更多运算" />
 
     <Button
         android:id="@+id/help_button"
+        android:layout_columnSpan="4"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"

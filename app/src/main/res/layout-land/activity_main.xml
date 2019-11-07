@@ -19,12 +19,20 @@
         android:maxLines="1"/>
 
     <Button
-        android:id="@+id/mmtocm_button"
+        android:id="@+id/mmcm_button"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:text="mm→cm" />
 
+
+    <Button
+        android:id="@+id/clear_button"
+        android:layout_columnSpan="1"
+        android:layout_gravity="fill"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="C" />
 
     <Button
         android:id="@+id/btd_button"
@@ -34,13 +42,6 @@
         android:layout_rowWeight="1"
         android:text="二进制转十进制" />
 
-    <Button
-        android:id="@+id/dtb_button"
-        android:layout_columnSpan="1"
-        android:layout_gravity="fill"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:text="十进制转二进制" />
 
     <Button
         android:id="@+id/dto_button"
@@ -51,15 +52,15 @@
         android:text="十进制转八进制" />
 
     <Button
-        android:id="@+id/otd_button"
+        android:id="@+id/dth_button"
         android:layout_columnSpan="1"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:text="八进制转十进制" />
+        android:text="十进制转十六进制" />
 
     <Button
-        android:id="@+id/cmtom_button"
+        android:id="@+id/cmm_button"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
@@ -74,21 +75,21 @@
         android:text="回退" />
 
     <Button
-        android:id="@+id/clear_button"
+        android:id="@+id/dtb_button"
         android:layout_columnSpan="1"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:text="清空" />
-
+        android:text="十进制转二进制" />
 
     <Button
-        android:id="@+id/dth_button"
+        android:id="@+id/otd_button"
         android:layout_columnSpan="1"
         android:layout_gravity="fill"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:text="十进制转十六进制" />
+        android:text="八进制转十进制" />
+
 
     <Button
         android:id="@+id/htd_button"

@@ -1,215 +1,232 @@
 package com.example.calculator2;
 
-import java.math.BigDecimal;//Java在java.math包中提供的API类BigDecimal，用来对超过16位有效位的数进行精确的运算。
+import java.math.BigDecimal;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Stack;
 
 public class main {
-    public static BigDecimal calculator(List list){
-        Deque<BigDecimal> deque = new ArrayDeque<>();
-        try {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                Object o = it.next();
-                if (o.getClass() == BigDecimal.class) {
-                    deque.addFirst((BigDecimal) o);
-                } else if (o.getClass() == Character.class) {
+    public static class Calculator {
+        private static Stack<Character> charStack = new Stack<Character>();
+        private static Stack<Double> doubStack = new Stack<Double>();
 
-                    BigDecimal first = deque.removeFirst();
-                    BigDecimal second = deque.remove();
-                    BigDecimal out = null;
-                    if ((Character) o == '+') {
-                        out = second.add(first);
-                        deque.addFirst(out);
-                    } else if ((Character) o == '-') {
-                        out = second.subtract(first);
-                        deque.addFirst(out);
-                    } else if ((Character) o == '*') {
-                        out = second.multiply(first);
-                        deque.addFirst(out);
-                    } else if ((Character) o == '/') {
-                        Double out2 = second.doubleValue() / first.doubleValue();
-                        String out3 = out2.toString();
-                        deque.addFirst(new BigDecimal(out3));
+        // 这是一个纠错方法
+        protected static String Recount(String value) {
+            char ch = 0;
+            String reValue = "", newStr = "";
+            int length = 0, index = 0, count = 0, i = 0;
+            // 如果最后的那个数不是数字且也不是回括号，则截取掉
+            if (value.length() > 0) {
+                char last = value.charAt(value.length() - 1);
+                if (!(last >= '0' && last <= '9') || last == '(')
+                    value = value.substring(0, value.length() - 1);
+            }
+            // 修改(4+10-(6 ==>(4+10-(6))
+            length = value.length();
+            while (i < length) {
+                ch = value.charAt(i);
+                if (ch == '(') {
+                    count++;
+                } else if (ch == ')') {
+                    count--;
+                }
+                if (ch >= '0' && ch <= '9') {
+                    newStr += ch;
+                } else {
+                    if (count >= 0)
+                        newStr += ch;
+                }
+                ++i;
+            }
+            while (count > 0) {
+                newStr += ")";
+                count--;
+            }
+            length = newStr.length();
+            while (index != length) {
+                ch = newStr.charAt(index);
+                if (ch >= '0' && ch <= '9') {
+                    // 修改 10*(4(-5)8) ===> 10*(4*(-5)*8)
+                    if (index > 0)
+                        if (newStr.charAt(index - 1) == ')')
+                            reValue += "*";
+                    reValue += ch;
+                    if (index < length - 1) {
+                        if (newStr.charAt(index + 1) == '(')
+                            reValue += "*";
                     }
-
-                }
-            }
-            BigDecimal comeOut = deque.removeFirst();
-            return comeOut;
-        } catch (Exception e) {
-            e.printStackTrace();
-            BigDecimal error = new BigDecimal("error");
-            return error;
-        }
-    }
-
-
-    public static List transferToBehind(char[] mid){
-        Deque<Character> deque = new ArrayDeque<>();
-        List list = new ArrayList();
-
-        int len = mid.length;
-        int i,k=0;
-
-        for (i = 0; i < len; i++){
-            if ( (judgeSymbol(mid[i]) && ((i > 0 && mid[i-1] != ')') || i == 0) ) || mid[i] == ')'
-                    && !lastBracket(mid,i) && k != i){
-                if (mid[i] == '-' && (i == 0 || judgeSymbol(mid[i-1]) || judgeBrackets(mid[i-1]))){
-                    continue;
-                }
-
-                String number = new String(mid).substring(k, i);
-
-                if (number.contains(")")){
-                    while ( deque.peekFirst() != '('){
-                        list.add(deque.removeFirst());
+                } else {
+                    // 修改 10-(5+5)(5+5) ===> 10-(5+5)*(5+5)
+                    if (index > 0)
+                        if (ch == '(' && newStr.charAt(index - 1) == ')')
+                            reValue += "*";
+                    // 针对 -(10/3)+3 ===> 0-(10/3)+3
+                    if (index == 0 && ch == '-')
+                        reValue += "0";
+                    // 这里起到一个筛选掉其它字母的作用
+                    switch (ch) {
+                        case '+':
+                        case '-':
+                        case '*':
+                        case '/':
+                        case '(':
+                        case ')':
+                        case '.':
+                        case '^':
+                            reValue += ch;
+                            break;
                     }
-                    deque.removeFirst();
-                    continue;
                 }
+                ++index;
+            }
+            // 判断第一个是否为'-'号
+            if(reValue.charAt(0) == '-'){
+                reValue = "0" + reValue;
+            }
+            // 以等于号作为结束标记
+            return (reValue + "=");
+        }
 
-                BigDecimal num = new BigDecimal(number);
-                list.add(num);
-                if (judgeSymbol(mid[i]) )
-                    k = i + 1;
-                else if (mid[i] == ')'){
-                    k = i + 2;
+        private static int isSwitch(char ch) {
+            int number = 0;
+            switch (ch) {
+                case '+': number = 0; break;
+                case '-': number = 1; break;
+                case '*': number = 2; break;
+                case '/': number = 3; break;
+                case '(': number = 4; break;
+                case ')': number = 5; break;
+                case '^': number = 6; break;
+                case '=': number = 7; break;
+            }
+            return number;
+        }
+
+        private static char Judge(char One, char Two)
+        {
+
+            char[][] menu = {
+                    { '>', '>', '<', '<', '<', '>', '<', '>' },
+                    { '>', '>', '<', '<', '<', '>', '<', '>' },
+                    { '>', '>', '>', '>', '<', '>', '<', '>' },
+                    { '>', '>', '>', '>', '<', '>', '<', '>' },
+                    { '<', '<', '<', '<', '<', 'K', '<', 'E' },
+                    { '<', '<', '<', '<', '<', '<', '<', 'E' },
+                    { '>', '>', '>', '>', '<', '>', '>', '>' },
+                    { '<', '<', '<', '<', '<', '<', '<', '=' }, };
+            int x = 0, y = 0;
+            x = isSwitch(One);
+            y = isSwitch(Two);
+            return menu[x][y];
+        }
+
+        // 栈计算
+        static String AddStacks(String reValue) {
+            char nowaday = 0, nextPop = 0, ch = 0;
+            int length = reValue.length();
+            double number = 0, temp = 0, decimal = 1, result = 0, One = 0, Two = 0;
+            boolean flag = false, sflag = false, dflag = false, nflag = false, reckon;
+            // 栈中以等于号作为开始标记
+            charStack.push('=');
+            int index = 0;
+            while (index < length) {
+                ch = reValue.charAt(index);
+                while (ch >= '0' && ch <= '9' || ch == '.') {
+                    if (ch != '.') {
+                        number = Double.parseDouble(String.valueOf(ch));
+                        temp = (temp * 10) + number;
+                        flag = true;
+                        if (dflag)
+                            decimal *= 10;
+                    } else
+                        dflag = true;
+                    index++;
+                    ch = reValue.charAt(index);
                 }
-            }
-
-            if (judgeNumber(mid[i]) && lastNumber(mid,i)){
-                String number = new String(mid).substring(i);
-                list.add(new BigDecimal(number));
-                break;
-            }
-
-            if (mid[i] == '('){
-                k++;
-            }
-
-            if (judgeSymbol(mid[i]) || judgeBrackets(mid[i]) ){
-                if (mid[i] == '*' || mid[i] == '/'){
-                    if (!deque.isEmpty() && (deque.peekFirst() == '*' || deque.peekFirst() == '/')){
-                        while (!deque.isEmpty() && deque.peekFirst() != '(' && deque.peekFirst() != '+'
-                                && deque.peekFirst() != '-'){
-                            list.add(deque.remove());
-                        }
+                /** -------------- + - * / ( ) ----------------- */
+                reckon = true;
+                if (flag == true) {
+                    // nflag 针对(-5+4) 的记录值
+                    // sflag 针对 -(5+4) 改为：(-5 + -4)
+                    if (nflag || sflag) {
+                        if (nflag)
+                            nflag = false;
+                        temp = -temp;
                     }
-                    deque.addFirst(mid[i]);
-                }else if (mid[i] == '+' || mid[i] == '-'){
-                    if (deque.isEmpty()){
-                        deque.addFirst(mid[i]);
-                    }else if (judgeSymbol(deque.peekFirst())){
-                        while ( !deque.isEmpty() && deque.peekFirst() != '('){
-                            list.add(deque.removeFirst());
-                        }
-                        deque.addFirst(mid[i]);
-                    }else {
-                        deque.addFirst(mid[i]);
+                    // 小数点
+                    if (dflag)
+                    {
+                        temp /= decimal;
+                        dflag = false;
+                        decimal = 1;
                     }
-                }else if (mid[i] == '('){
-                    deque.addFirst(mid[i]);
-                }else if (mid[i] == ')'){
-                    while ( deque.peekFirst() != '('){
-                        list.add(deque.removeFirst());
+                    doubStack.push(temp);
+                    temp = 0;
+                    flag = false;
+                }
+                if (sflag && ch == ')')
+                    sflag = false;
+                if (ch == '-') {
+                    char chs = reValue.charAt(index - 1);
+                    char chn = reValue.charAt(index + 1);
+                    if (chs == '+' || chs == '-' || chs == '*' || chs == '/' || chs == '(') {
+                        // 如果类似于这种 5*-(10+4) 遇到-符号后面是减号则
+                        // 从-号后面的括号开始 依次转换为 5*(-10+-4)
+                        if (chn == '(')
+                            sflag = true;
+                        else
+                            nflag = true; // 针对 + - * / 后面的 - ，作为负数来处理
+                        reckon = false;
                     }
-                    deque.removeFirst();
                 }
-            }else {
-                continue;
-            }
-        }
-        int m = 1;
-        while ( !deque.isEmpty() && (deque.peekFirst() == '(' || deque.peekFirst() == ')')){
-            deque.removeFirst();
-            System.out.println("有" + m++ + "个括号不匹配");
-        }
-        if (!deque.isEmpty()) {
-            list.add(deque.removeFirst());
-        }
-        return list;
-    }
-
-
-    public static boolean judgeSymbol(char word){
-        if (word == '+' || word == '-' || word == '*' || word == '/' ){
-            return true;
-        }
-        return false;
-    }
-    public static boolean judgeBrackets(char word){
-        if (word == '(' || word == ')'){
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean judgeNumber(char word){
-        if ( (word >= '0' && word <= '9' )|| word == '.'){
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean lastNumber(char[] mid,int i){
-        String str = new String(mid);
-        String rest = str.substring(i+1);
-        if (rest.contains("*") || rest.contains("/") || rest.contains("+") ||rest.contains("-") ||rest.contains("(")
-                || rest.contains(")") ){
-            return false;
-        }
-        return true;
-    }
-
-    public static boolean lastBracket(char[] mid, int i){
-        if (mid[i-1] != ')' || mid[i-2] == ')'){
-            return false;
-        }
-        String rest = new String(mid).substring(i);
-        if (rest.contains("0") || rest.contains("1") ||rest.contains("2") || rest.contains("3") || rest.contains("4") ||
-                rest.contains("5") ||rest.contains("6") || rest.contains("7") || rest.contains("8") || rest.contains("9")){
-            return false;
-        }
-        return true;
-    }
-
-    public static boolean judgeIllegal(char[] mid,int i){
-        String rest = new String(mid).substring(i);
-        if (!rest.contains("+") && !rest.contains("-") && !rest.contains("*") && !rest.contains("/") &&
-                !rest.contains("(") && !rest.contains(")") && !rest.contains("0") && !rest.contains("1") &&
-                !rest.contains("2") && !rest.contains("3") && !rest.contains("4") && !rest.contains("5") &&
-                !rest.contains("6") && !rest.contains("7") && !rest.contains("8") && !rest.contains("9")){
-            return true;
-        }
-        return false;
-    }
-
-    public static char[] cutString(char[] mid){
-        for (int i = 0; i < mid.length; i++){
-            if (!judgeBrackets(mid[i]) && !judgeSymbol(mid[i]) && !judgeNumber(mid[i])){
-                System.out.println("出现非法字符！已为你自动消除");
-                if (i == 0){
-                    mid = Arrays.copyOfRange(mid,1,mid.length);
-                    i--;
-                }else if (judgeIllegal(mid,i)){
-                    mid = Arrays.copyOfRange(mid,0,i);
-                    break;
-                }else {
-                    char[] beyond = Arrays.copyOfRange(mid,0,i);
-                    char[] behind = Arrays.copyOfRange(mid,i+1,mid.length);
-                    String str1 = new String(beyond);
-                    String str2 = new String(behind);
-                    String temp = str1 + str2;
-                    mid = temp.toCharArray();
-                    i--;
+                while (reckon) {
+                    nowaday = reValue.charAt(index);
+                    nextPop = charStack.pop();
+                    switch (Judge(nextPop, nowaday)) {
+                        case '>':
+                            try
+                            {
+                                Two = doubStack.pop();
+                                One = doubStack.pop();
+                            } catch (Exception e) {
+                                return "ERROR";
+                            }
+                            switch (nextPop)
+                            {
+                                case '+': result = One + Two; break;
+                                case '-': result = One - Two; break;
+                                case '*': result = One * Two; break;
+                                case '/': result = One / Two; break;
+                                case '^': result = Math.pow(One, Two); break;
+                            }
+                            doubStack.push(result);
+                            break;
+                        case '<':
+                            charStack.push(nextPop);
+                            charStack.push(nowaday);
+                            reckon = false;
+                            break;
+                        case '=':
+                            // 保留二位小数点
+                            return (String.format("%g", doubStack.pop()));
+                        case 'K': // 开括号与回括号相撞，出栈的开括号不入栈并从回括号开始把符号往下移一位
+                            ++index;
+                            break;
+                        case 'E':
+                            return ("ERROR");
+                    }
                 }
+                ++index;
             }
+            return null;
         }
-        return mid;
+
+        /*
+         * 调用公开的方法进行计算
+         */
     }
 }
