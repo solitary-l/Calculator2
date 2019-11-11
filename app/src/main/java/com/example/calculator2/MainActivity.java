@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import java.util.Stack;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
@@ -339,7 +339,8 @@ public class MainActivity extends AppCompatActivity {
                     {
                         String middle = txt.getText().toString();
                         middle= main.Calculator.Recount(middle);
-                        List list = Collections.singletonList(main.Calculator.AddStacks(middle));
+                        middle=main.Calculator.AddStacks(middle);
+                        List list = Collections.singletonList(middle);
                         txt.setText(list.toString());
                     }
                     catch (Exception e) {
@@ -358,6 +359,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     TextView txt = (TextView) findViewById(R.id.txt);
+
                     double a = Math.toRadians(Double.parseDouble(txt.getText().toString()));
                     String str = "" + Math.sin(a);
                     txt.setText(str);

@@ -130,13 +130,13 @@ public class main {
             int length = reValue.length();
             double number = 0, temp = 0, decimal = 1, result = 0, One = 0, Two = 0;
             boolean flag = false, sflag = false, dflag = false, nflag = false, reckon;
-            // 栈中以等于号作为开始标记
             charStack.push('=');
             int index = 0;
             while (index < length) {
                 ch = reValue.charAt(index);
                 while (ch >= '0' && ch <= '9' || ch == '.') {
-                    if (ch != '.') {
+                    if (ch != '.')
+                    {
                         number = Double.parseDouble(String.valueOf(ch));
                         temp = (temp * 10) + number;
                         flag = true;
@@ -173,7 +173,8 @@ public class main {
                 if (ch == '-') {
                     char chs = reValue.charAt(index - 1);
                     char chn = reValue.charAt(index + 1);
-                    if (chs == '+' || chs == '-' || chs == '*' || chs == '/' || chs == '(') {
+                    if (chs == '+' || chs == '-' || chs == '*' || chs == '/' || chs == '(')
+                    {
                         // 如果类似于这种 5*-(10+4) 遇到-符号后面是减号则
                         // 从-号后面的括号开始 依次转换为 5*(-10+-4)
                         if (chn == '(')
@@ -212,7 +213,7 @@ public class main {
                             break;
                         case '=':
                             // 保留二位小数点
-                            return (String.format("%g", doubStack.pop()));
+                            return (String.format( String.format("%g", doubStack.pop())));
                         case 'K': // 开括号与回括号相撞，出栈的开括号不入栈并从回括号开始把符号往下移一位
                             ++index;
                             break;
